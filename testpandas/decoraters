@@ -1,0 +1,21 @@
+def decorator1(func):
+    def wrapper():
+        print("Decorator 1 called")
+        print("Decorator 1 called")
+        func()
+        print("Decorater 1 finished")
+    return wrapper
+
+def decorator2(func):
+    def wrapper():
+        print("Decorator 2 called")
+        func()
+        print("Decorater 2 finished")
+    return wrapper
+
+@decorator1
+@decorator2
+def hello():
+    print("Hello, world!")
+
+hello()
